@@ -30,7 +30,12 @@ struct ListScreen: View {
                         EmptyView()
                     }
                     ForEach(items) { item in
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")}
+                        VStack(alignment: .leading){
+                            Text(item.title ?? "").font(.headline)
+                            Text(item.detail ?? "")
+                            Text("\(item.timestamp!, formatter: itemFormatter)")
+                        }
+                        }
                 }.navigationTitle("list_title")
             }
             

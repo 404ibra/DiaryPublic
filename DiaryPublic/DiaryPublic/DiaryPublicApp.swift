@@ -13,7 +13,8 @@ struct DiaryPublicApp: App {
 
     var body: some Scene {
         WindowGroup {
-           TabScreen()
+            TabScreen()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
