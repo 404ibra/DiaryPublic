@@ -13,7 +13,7 @@ struct DiaryPublicApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TabScreen()
+           TabScreen()
         }
     }
 }

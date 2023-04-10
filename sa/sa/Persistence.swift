@@ -1,8 +1,8 @@
 //
 //  Persistence.swift
-//  DiaryPublic
+//  sa
 //
-//  Created by İbrahim Aktaş on 9.04.2023.
+//  Created by İbrahim Aktaş on 10.04.2023.
 //
 
 import CoreData

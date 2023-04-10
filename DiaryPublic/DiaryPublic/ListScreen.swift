@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import CoreData
+
 
 struct ListScreen: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -15,13 +15,30 @@ struct ListScreen: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
+    @State var actionAddPost: Int? = 0
     var body: some View {
+        
+        
         ZStack(alignment: .bottomTrailing){
-            Text("Liste olacak burada")
+            
+    
+            
+            NavigationStack{
+                List{
+                    NavigationLink(destination: AddPost(), tag: 1, selection: $actionAddPost){
+                        EmptyView()
+                    }
+                    ForEach(items) { item in
+                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")}
+                }.navigationTitle("list_title")
+            }
+            
+            
             Button {
-                debugPrint("butona basildi")
+                self.actionAddPost = 1
             } label: {
-                AddFabButton()
+                AddFabButton().padding(24)
             }
 
             

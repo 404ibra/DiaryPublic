@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6C0BD9DD29E47EB70094C990 /* AddFabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0BD9DC29E47EB70094C990 /* AddFabButton.swift */; };
+		6C4AA04429E4ACC500F5A014 /* AddPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4AA04329E4ACC500F5A014 /* AddPost.swift */; };
 		6C5B372D29E43FF70082528A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C5B372F29E43FF70082528A /* Localizable.strings */; };
 		6C5B373429E441750082528A /* TabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5B373329E441750082528A /* TabScreen.swift */; };
 		6C5B373629E441BD0082528A /* ListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5B373529E441BD0082528A /* ListScreen.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		6C0BD9DC29E47EB70094C990 /* AddFabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFabButton.swift; sourceTree = "<group>"; };
+		6C4AA04329E4ACC500F5A014 /* AddPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPost.swift; sourceTree = "<group>"; };
 		6C5B372E29E43FF70082528A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C5B373029E440070082528A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C5B373329E441750082528A /* TabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabScreen.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				6C7093D329E3480600A33B8A /* DiaryPublic.xcdatamodeld */,
 				6C7093CE29E3480600A33B8A /* Preview Content */,
 				6C5B372F29E43FF70082528A /* Localizable.strings */,
+				6C4AA04329E4ACC500F5A014 /* AddPost.swift */,
 			);
 			path = DiaryPublic;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				6C5B373629E441BD0082528A /* ListScreen.swift in Sources */,
 				6C7093D529E3480600A33B8A /* DiaryPublic.xcdatamodeld in Sources */,
 				6C7093D229E3480600A33B8A /* Persistence.swift in Sources */,
+				6C4AA04429E4ACC500F5A014 /* AddPost.swift in Sources */,
 				6C7093CB29E3480500A33B8A /* ContentView.swift in Sources */,
 				6C5B373B29E44D880082528A /* TabViewEnuım.swift in Sources */,
 				6C7093C929E3480500A33B8A /* DiaryPublicApp.swift in Sources */,

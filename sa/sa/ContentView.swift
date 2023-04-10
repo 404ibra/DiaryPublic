@@ -1,4 +1,9 @@
-
+//
+//  ContentView.swift
+//  sa
+//
+//  Created by İbrahim Aktaş on 10.04.2023.
+//
 
 import SwiftUI
 import CoreData
