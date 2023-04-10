@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  DiaryPublic
+
+  Created by İbrahim Aktaş on 10.04.2023.
+  
+*/
+
+"app_title" = "Diary Media";
+"edit" = "Edit";
+"add" = "Add";
