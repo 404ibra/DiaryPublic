@@ -10,10 +10,11 @@ import SwiftUI
 @main
 struct DiaryPublicApp: App {
     let persistenceController = PersistenceController.shared
+    let alertViewModel = AlertViewModel()
 
     var body: some Scene {
         WindowGroup {
-            TabScreen()
+            TabScreen().environmentObject(alertViewModel)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

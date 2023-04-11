@@ -9,19 +9,34 @@ import SwiftUI
 
 struct AddPost: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.presentationMode) private var presentationMode
+    @EnvironmentObject var alertViewModel: AlertViewModel
     @State var title: String = ""
     @State var description: String = ""
+    @State var emoji: String = ""
    
     var body: some View {
         Form{
             TextField("Title", text: $title)
             TextField("Description", text: $description)
-           // TextField("Description", text: $description)
+            TextField("Emoji", text: $emoji)
         }.navigationBarItems(trailing: Button(action: {
-       
-            addItem()}, label: {
+            if title.isEmpty{
+                self.alertViewModel.showAlert(title: "", description: "")
+            }else{
+                addItem()
+                presentationMode.wrappedValue.dismiss()
+            }
+          
+            
+        }, label: {
             Image(systemName: "plus.square")
-        })).navigationTitle("Add Post")
+        }).alert(isPresented: $alertViewModel.showAlert) {
+            Alert(title: Text(""), message: Text(""), dismissButton: .default(Text("dsadsa")))
+        }
+        
+        
+        ).navigationTitle("Add Post")
     }
     
     private func addItem() {
@@ -30,6 +45,7 @@ struct AddPost: View {
             newItem.timestamp = Date()
             newItem.title = title
             newItem.detail = description
+            newItem.emoji = emoji
            
             do {
                 try viewContext.save()

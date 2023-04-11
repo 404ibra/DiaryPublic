@@ -10,20 +10,13 @@ import SwiftUI
 
 struct ListScreen: View {
     @Environment(\.managedObjectContext) private var viewContext
-
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-    
     @State var actionAddPost: Int? = 0
     var body: some View {
-        
-        
         ZStack(alignment: .bottomTrailing){
-            
-    
-            
             NavigationStack{
                 List{
                     NavigationLink(destination: AddPost(), tag: 1, selection: $actionAddPost){
@@ -31,22 +24,21 @@ struct ListScreen: View {
                     }
                     ForEach(items) { item in
                         VStack(alignment: .leading){
-                            Text(item.title ?? "").font(.headline)
-                            Text(item.detail ?? "")
+                            HStack{
+                                Text(item.title ?? "").font(.headline)
+                                Text(item.emoji ?? "")
+                            }
+                            Text(item.detail ?? "").foregroundColor(.secondary)
                             Text("\(item.timestamp!, formatter: itemFormatter)")
                         }
                         }
                 }.navigationTitle("list_title")
             }
-            
-            
             Button {
                 self.actionAddPost = 1
             } label: {
                 AddFabButton().padding(24)
             }
-
-            
         }
     }
             private let itemFormatter: DateFormatter = {
